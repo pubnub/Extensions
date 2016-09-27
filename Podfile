@@ -12,4 +12,4 @@ end
 
 target 'PubNubShareExtension' do
     pod 'PubNub'
- end
+end
