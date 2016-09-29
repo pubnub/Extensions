@@ -29,13 +29,14 @@ class ShareViewController: SLComposeServiceViewController {
         client.logger.enabled = true
         client.logger.enableLogLevel(PNLogLevel.PNVerboseLogLevel.rawValue)
  
+        /*
         let configName = "com.PubNub.shareExtension"
         let sessionConfig = URLSessionConfiguration.background(withIdentifier: configName)
         // Extensions aren't allowed their own cache disk space. Need to share with application
         sessionConfig.sharedContainerIdentifier = "group.PubNub.sharedContainer"
         let session = URLSession(configuration: sessionConfig)
         session.dataTask(with: URL(string: "http://httpbin.org")!).resume()
-        
+        */
         guard let inputItems = self.extensionContext?.inputItems, inputItems.count > 0 else {
             self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
             return

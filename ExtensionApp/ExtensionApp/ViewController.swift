@@ -26,7 +26,6 @@ class ViewController: UIViewController, PNObjectEventListener {
     }
     
     // MARK: - PNObjectEventListener
-    
     func client(_ client: PubNub, didReceive status: PNStatus) {
         print("\(#function) client: \(client.debugDescription) message: \(status.debugDescription)")
     }
