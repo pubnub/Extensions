@@ -10,7 +10,7 @@ import UIKit
 import Social
 import PubNub
 
-class ShareViewController: SLComposeServiceViewController {
+class ShareViewController: SLComposeServiceViewController, URLSessionDelegate, URLSessionDataDelegate, URLSessionTaskDelegate {
     
     let publishChannel = "publishFromExtension"
     
@@ -24,19 +24,20 @@ class ShareViewController: SLComposeServiceViewController {
         
         
         // create PubNub client
+        let extensionQueue = DispatchQueue(label: "backgroundContext")
         let config = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
-        let client = PubNub.clientWithConfiguration(config)
+        let client = PubNub.clientWithConfiguration(config, callbackQueue: extensionQueue)
         client.logger.enabled = true
         client.logger.enableLogLevel(PNLogLevel.PNVerboseLogLevel.rawValue)
  
-        /*
+        
         let configName = "com.PubNub.shareExtension"
         let sessionConfig = URLSessionConfiguration.background(withIdentifier: configName)
         // Extensions aren't allowed their own cache disk space. Need to share with application
         sessionConfig.sharedContainerIdentifier = "group.PubNub.sharedContainer"
-        let session = URLSession(configuration: sessionConfig)
-        session.dataTask(with: URL(string: "http://httpbin.org")!).resume()
-        */
+        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+        session.dataTask(with: URL(string: "https://httpbin.org/get")!).resume()
+        
         guard let inputItems = self.extensionContext?.inputItems, inputItems.count > 0 else {
             self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
             return
@@ -69,5 +70,31 @@ class ShareViewController: SLComposeServiceViewController {
         // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         return []
     }
+    
+    // MARK: - URLSessionDelegate
+    
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        print("extension log ---- \(#function) session: \(session.debugDescription)")
+    }
+    
+    // MARK: - URLSessionDataDelegate
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        print("extension log ---- \(#function) session: \(session.debugDescription) task: \(dataTask.debugDescription)")
+        do {
+            let receivedJSONObject = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+            print("json object: \(receivedJSONObject)")
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - URLSessionTaskDelegate
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        print("extension log ---- \(#function) session: \(session.debugDescription) task: \(task.debugDescription) error: \(error?.localizedDescription)")
+    }
+    
+    
 
 }
