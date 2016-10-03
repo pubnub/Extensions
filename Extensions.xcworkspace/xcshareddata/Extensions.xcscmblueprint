@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "753CBBF90DCB15996391808338EF51542208DD66",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "753CBBF90DCB15996391808338EF51542208DD66" : 9223372036854775807,
+    "E43D1A5E7D6A1BB1B77CBD55622D3351A48F12E0" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C289285C-0978-4DB9-855B-F9AFEC44301D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "753CBBF90DCB15996391808338EF51542208DD66" : "PubNub-in-extension\/",
+    "E43D1A5E7D6A1BB1B77CBD55622D3351A48F12E0" : "objective-c\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Extensions",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Extensions.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jzucker2\/Extensions.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "753CBBF90DCB15996391808338EF51542208DD66"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:pubnub\/objective-c.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E43D1A5E7D6A1BB1B77CBD55622D3351A48F12E0"
+    }
+  ]
+}

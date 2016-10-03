@@ -7,94 +7,125 @@
 //
 
 import UIKit
+import MobileCoreServices
 import Social
 import PubNub
 
-class ShareViewController: SLComposeServiceViewController, URLSessionDelegate, URLSessionDataDelegate, URLSessionTaskDelegate {
+class ShareViewController: SLComposeServiceViewController {
     
     let publishChannel = "publishFromExtension"
     
+    lazy var client: PubNub! = {
+        
+        // Create PubNub client
+        let configuration = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
+        configuration.applicationExtensionSupport = true
+        configuration.applicationExtensionSharedGroupIdentifier = "group.com.smamontov.PubNub.sharedContainer"
+        
+        return PubNub.clientWithConfiguration(configuration)
+    }()
+    
+    override func viewDidLoad() {
+        
+        // Forward method call to the super class.
+        super.viewDidLoad();
+        
+        // Configure components and delegates.
+        self.placeholder = "Please input message which should be sent."
+        self.textView.delegate = self;
+    }
+    
     override func isContentValid() -> Bool {
-        // Do validation of contentText and/or NSExtensionContext attachments here
-        return true
+        
+        return !self.contentText.isEmpty
     }
 
+    
+    // MARK: Handle user actions
+    
     override func didSelectPost() {
-        // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
         
-        
-        // create PubNub client
-        let extensionQueue = DispatchQueue(label: "backgroundContext")
-        let config = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
-        let client = PubNub.clientWithConfiguration(config, callbackQueue: extensionQueue)
-        client.logger.enabled = true
-        client.logger.enableLogLevel(PNLogLevel.PNVerboseLogLevel.rawValue)
- 
-        
-        let configName = "com.PubNub.shareExtension"
-        let sessionConfig = URLSessionConfiguration.background(withIdentifier: configName)
-        // Extensions aren't allowed their own cache disk space. Need to share with application
-        sessionConfig.sharedContainerIdentifier = "group.PubNub.sharedContainer"
-        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
-        session.dataTask(with: URL(string: "https://httpbin.org/get")!).resume()
-        
-        guard let inputItems = self.extensionContext?.inputItems, inputItems.count > 0 else {
+        guard let inputItems: Array<NSExtensionItem> = self.extensionContext!.inputItems as? Array<NSExtensionItem>,
+            inputItems.count > 0 else {
+            
             self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
             return
         }
         
-        var message = [String:String]()
-        message["example"] = "ExtensionItem"
+        var message = [String:Any]()
+        message["message"] = self.contentText
         
-        for inputItem in inputItems {
-            guard let extensionItem = inputItem as? NSExtensionItem else {
-                fatalError("encountered unknown type")
-            }
-            print("extensionItem: \(extensionItem)")
-            if let inputString = extensionItem.attributedContentText {
-                message["inputString"] = inputString.string
-            }
-        }
-        print("message: \(message)")
-        client.publish(message, toChannel: publishChannel) { (status) in
-            print("publishStatus: \(status.debugDescription)")
-            // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
+        let inputItem = inputItems.first
+        guard let itemProvider = inputItem?.attachments?.first as? NSItemProvider else {
             self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+            return
         }
-    
-        // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-        //self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+        
+        if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage as String) {
+            
+            self.base64EncodedImageFromProvider(itemProvider, withCompletion: { (base64String) in
+                
+                if let safeBase64String = base64String { message["image"] = safeBase64String; }
+                self.publishMessage(message)
+            })
+        }
+        else { publishMessage(message) }
     }
 
     override func configurationItems() -> [Any]! {
-        // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
+        
         return []
     }
     
-    // MARK: - URLSessionDelegate
-    
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        print("extension log ---- \(#function) session: \(session.debugDescription)")
+    // MARK: UITextViewDelegate
+
+    override func textViewDidChange(_ textView: UITextView) {
+         
+        super.validateContent()
     }
     
-    // MARK: - URLSessionDataDelegate
-    
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-        print("extension log ---- \(#function) session: \(session.debugDescription) task: \(dataTask.debugDescription)")
-        do {
-            let receivedJSONObject = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
-            print("json object: \(receivedJSONObject)")
-        } catch {
-            fatalError(error.localizedDescription)
+    func publishMessage(_ message: Any) {
+        
+        self.client.publish(message, toChannel: publishChannel) { (status) in
+            
+            self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         }
     }
     
-    // MARK: - URLSessionTaskDelegate
-    
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("extension log ---- \(#function) session: \(session.debugDescription) task: \(task.debugDescription) error: \(error?.localizedDescription)")
+    func base64EncodedImageFromProvider(_ provider: NSItemProvider, 
+                                        withCompletion completion: @escaping (_ base64String: String?) -> Void) {
+        
+        provider.loadItem(forTypeIdentifier: kUTTypeImage as String, options: nil, 
+                          completionHandler: { (imageURL, error) in
+                                
+            if let safeImageURL: URL = (imageURL as? URL) {
+                
+                do {
+                    
+                    let imageData = try Data(contentsOf: safeImageURL)
+                    let loadedImage = self.resizedImage(UIImage(data: imageData)!, targetWidth: 200);
+                    
+                    let compressedImage = UIImageJPEGRepresentation(loadedImage, 0.45)
+                    if let encodedImage = compressedImage?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0))) {
+                        
+                        completion(encodedImage)
+                    }
+                }
+                catch { completion(nil) }
+            }
+            else { completion(nil)  }
+        })
     }
     
-    
-
+    func resizedImage(_ image: UIImage, targetWidth: CGFloat) -> UIImage {
+        
+        let scale = targetWidth / image.size.width
+        let targetHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: targetWidth, height: targetHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: targetWidth, height: targetHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
 }
