@@ -20,7 +20,7 @@ class ShareViewController: SLComposeServiceViewController {
         // Create PubNub client
         let configuration = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
         configuration.applicationExtensionSupport = true
-        configuration.applicationExtensionSharedGroupIdentifier = "group.com.smamontov.PubNub.sharedContainer"
+        configuration.applicationExtensionSharedGroupIdentifier = "group.PubNub.sharedContainer"
         
         return PubNub.clientWithConfiguration(configuration)
     }()
@@ -87,7 +87,6 @@ class ShareViewController: SLComposeServiceViewController {
     func publishMessage(_ message: Any) {
         
         self.client.publish(message, toChannel: publishChannel) { (status) in
-            
             self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
         }
     }
