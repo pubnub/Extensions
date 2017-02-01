@@ -31,7 +31,7 @@ class ShareViewController: SLComposeServiceViewController {
         super.viewDidLoad();
         
         // Configure components and delegates.
-        self.placeholder = "Please input message which should be sent."
+        self.placeholder = "Please input message to be published via PubNub."
         self.textView.delegate = self;
     }
     
