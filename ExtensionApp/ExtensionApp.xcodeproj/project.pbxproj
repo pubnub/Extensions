@@ -61,8 +61,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		059F522C638711555C53CD50 /* Pods-PubNubShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		066A910D476A8162BC70FDD0 /* Pods-PubNubShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		06EDAAE7E259905CA29802DD /* Pods_ExtensionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExtensionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		51C0AAA41D9F2BAE00CE34D8 /* ExtensionApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExtensionApp.entitlements; sourceTree = "<group>"; };
 		51E075C41D99C4EF0078218C /* ExtensionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtensionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E075C71D99C4EF0078218C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +84,8 @@
 		51E076011D99C5290078218C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		51E076031D99C5290078218C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E0760B1D99CE960078218C /* PubNubShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PubNubShareExtension.entitlements; sourceTree = "<group>"; };
-		57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.debug.xcconfig"; sourceTree = "<group>"; };
-		6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.release.xcconfig"; sourceTree = "<group>"; };
-		867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.release.xcconfig"; sourceTree = "<group>"; };
+		67F3B648D1AA9F7FCD704FE8 /* Pods-ExtensionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6DC0CE373A11ABC1A659D538 /* Pods-ExtensionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.release.xcconfig"; sourceTree = "<group>"; };
 		EB86C95ACD4F9CF2D2FCC8DC /* Pods_PubNubShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PubNubShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,10 +126,10 @@
 		0B9E65B33C8DB89330732E70 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */,
-				6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */,
-				092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */,
-				867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */,
+				67F3B648D1AA9F7FCD704FE8 /* Pods-ExtensionApp.debug.xcconfig */,
+				6DC0CE373A11ABC1A659D538 /* Pods-ExtensionApp.release.xcconfig */,
+				059F522C638711555C53CD50 /* Pods-PubNubShareExtension.debug.xcconfig */,
+				066A910D476A8162BC70FDD0 /* Pods-PubNubShareExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -280,7 +280,6 @@
 				51E075F81D99C5290078218C /* Sources */,
 				51E075F91D99C5290078218C /* Frameworks */,
 				51E075FA1D99C5290078218C /* Resources */,
-				FB227B0CAA58DC4BEE249070 /* [CP] Embed Pods Frameworks */,
 				3999D277232ACD7F76D0A303 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -401,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3999D277232ACD7F76D0A303 /* [CP] Copy Pods Resources */ = {
@@ -446,7 +445,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D7DCFC242080DF9A5B0A40D2 /* [CP] Copy Pods Resources */ = {
@@ -462,21 +461,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB227B0CAA58DC4BEE249070 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -659,7 +643,7 @@
 		};
 		51E075F01D99C4EF0078218C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */;
+			baseConfigurationReference = 67F3B648D1AA9F7FCD704FE8 /* Pods-ExtensionApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -675,7 +659,7 @@
 		};
 		51E075F11D99C4EF0078218C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */;
+			baseConfigurationReference = 6DC0CE373A11ABC1A659D538 /* Pods-ExtensionApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -749,12 +733,17 @@
 		};
 		51E076081D99C5290078218C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */;
+			baseConfigurationReference = 059F522C638711555C53CD50 /* Pods-PubNubShareExtension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = PubNubShareExtension/PubNubShareExtension.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PubNubShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PubNub\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.PubNubShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -764,12 +753,17 @@
 		};
 		51E076091D99C5290078218C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */;
+			baseConfigurationReference = 066A910D476A8162BC70FDD0 /* Pods-PubNubShareExtension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = PubNubShareExtension/PubNubShareExtension.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PubNubShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PubNub\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.PubNubShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
