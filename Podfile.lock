@@ -1,24 +1,14 @@
 PODS:
-  - PubNub (4.5.3):
-    - PubNub/Core (= 4.5.3)
-  - PubNub/Core (4.5.3)
+  - PubNub (4.5.12):
+    - PubNub/Core (= 4.5.12)
+  - PubNub/Core (4.5.12)
 
 DEPENDENCIES:
-  - PubNub (from `https://github.com/pubnub/objective-c.git`, branch `feature/pt131200927`)
-
-EXTERNAL SOURCES:
-  PubNub:
-    :branch: feature/pt131200927
-    :git: https://github.com/pubnub/objective-c.git
-
-CHECKOUT OPTIONS:
-  PubNub:
-    :commit: 284027952655e5e0ec03981f14d3e26ddd0a58b4
-    :git: https://github.com/pubnub/objective-c.git
+  - PubNub
 
 SPEC CHECKSUMS:
-  PubNub: 42623b6046ab65bb2ec9c4fb51791d86aa956926
+  PubNub: d092e632ea13373c56cf877f06ec17853fca324a
 
-PODFILE CHECKSUM: 36777c51b4d7011869dfce3104fa06fd2aba9c73
+PODFILE CHECKSUM: 6d9e3055e6a5c81696ecbebbc38057f72155eb20
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.3

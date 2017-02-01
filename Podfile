@@ -3,14 +3,22 @@ project 'ExtensionApp/ExtensionApp'
 use_frameworks!
 
 target 'ExtensionApp' do
-  #pod 'PubNub'
-  pod 'PubNub', :git => 'https://github.com/pubnub/objective-c.git', :branch => 'feature/pt131200927'
+  platform :ios, '10.0'
+  pod 'PubNub'
 
-  # target 'PubNubShareExtension' do
-  #   inherit! :search_paths
-  # end
+   target 'PubNubShareExtension' do
+   	inherit! :search_paths
+   end
+   
+#   target 'PubNubWatchExtension Extension' do
+#       inherit! :search_paths
+#       platform :watchos, '3.0'
+#       pod 'PubNub'
+#   end
+
 end
 
-target 'PubNubShareExtension' do
-    pod 'PubNub', :git => 'https://github.com/pubnub/objective-c.git', :branch => 'feature/pt131200927'
+target 'PubNubWatchExtension Extension' do
+    platform :watchos, '3.0'
+    pod 'PubNub'
 end

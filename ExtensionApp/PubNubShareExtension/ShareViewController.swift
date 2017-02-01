@@ -19,7 +19,7 @@ class ShareViewController: SLComposeServiceViewController {
         
         // Create PubNub client
         let configuration = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
-        configuration.applicationExtensionSupport = true
+//        configuration.applicationExtensionSharedGroupIdentifier = true
         configuration.applicationExtensionSharedGroupIdentifier = "group.PubNub.sharedContainer"
         
         return PubNub.clientWithConfiguration(configuration)
@@ -31,7 +31,7 @@ class ShareViewController: SLComposeServiceViewController {
         super.viewDidLoad();
         
         // Configure components and delegates.
-        self.placeholder = "Please input message which should be sent."
+        self.placeholder = "Please input message to be published via PubNub."
         self.textView.delegate = self;
     }
     

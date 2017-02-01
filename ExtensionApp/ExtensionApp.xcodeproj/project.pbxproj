@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		513FD8D91E424B8400ADEC31 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513FD8D71E424B8400ADEC31 /* Interface.storyboard */; };
+		513FD8DB1E424B8400ADEC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513FD8DA1E424B8400ADEC31 /* Assets.xcassets */; };
+		513FD8E21E424B8400ADEC31 /* PubNubWatchExtension Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 513FD8E11E424B8400ADEC31 /* PubNubWatchExtension Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		513FD8E71E424B8400ADEC31 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8E61E424B8400ADEC31 /* InterfaceController.swift */; };
+		513FD8E91E424B8400ADEC31 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8E81E424B8400ADEC31 /* ExtensionDelegate.swift */; };
+		513FD8EB1E424B8400ADEC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513FD8EA1E424B8400ADEC31 /* Assets.xcassets */; };
+		513FD8EF1E424B8400ADEC31 /* PubNubWatchExtension.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 513FD8D51E424B8400ADEC31 /* PubNubWatchExtension.app */; };
 		51E075C81D99C4EF0078218C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E075C71D99C4EF0078218C /* AppDelegate.swift */; };
 		51E075CA1D99C4EF0078218C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E075C91D99C4EF0078218C /* ViewController.swift */; };
 		51E075CD1D99C4EF0078218C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E075CB1D99C4EF0078218C /* Main.storyboard */; };
@@ -19,10 +26,25 @@
 		51E076021D99C5290078218C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E076001D99C5290078218C /* MainInterface.storyboard */; };
 		51E076061D99C5290078218C /* PubNubShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51E075FC1D99C5290078218C /* PubNubShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7D7420D307999425787ABB73 /* Pods_PubNubShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB86C95ACD4F9CF2D2FCC8DC /* Pods_PubNubShareExtension.framework */; };
+		A479EB8A0697B5B674BD22ED /* Pods_PubNubWatchExtension_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA6A963E921C17FD02CD35C /* Pods_PubNubWatchExtension_Extension.framework */; };
 		DDC29B051BF02A7C76803BDF /* Pods_ExtensionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EDAAE7E259905CA29802DD /* Pods_ExtensionApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		513FD8E31E424B8400ADEC31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51E075BC1D99C4EF0078218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 513FD8E01E424B8400ADEC31;
+			remoteInfo = "PubNubWatchExtension Extension";
+		};
+		513FD8ED1E424B8400ADEC31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51E075BC1D99C4EF0078218C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 513FD8D41E424B8400ADEC31;
+			remoteInfo = PubNubWatchExtension;
+		};
 		51E075DC1D99C4EF0078218C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51E075BC1D99C4EF0078218C /* Project object */;
@@ -47,6 +69,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		513FD8F51E424B8400ADEC31 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				513FD8E21E424B8400ADEC31 /* PubNubWatchExtension Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		513FD8F71E424B8400ADEC31 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				513FD8EF1E424B8400ADEC31 /* PubNubWatchExtension.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51E0760A1D99C5290078218C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,7 +106,19 @@
 
 /* Begin PBXFileReference section */
 		06EDAAE7E259905CA29802DD /* Pods_ExtensionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExtensionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		2108871F43A0A4091740AB1E /* Pods-PubNubWatchExtension Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubWatchExtension Extension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubWatchExtension Extension/Pods-PubNubWatchExtension Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		23A607B1637B1A7AD6F72DDE /* Pods-PubNubShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.release.xcconfig"; sourceTree = "<group>"; };
+		35E069F91FF1D531309C8D5D /* Pods_PubNubWatchExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PubNubWatchExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		513FD8D51E424B8400ADEC31 /* PubNubWatchExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PubNubWatchExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		513FD8D81E424B8400ADEC31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		513FD8DA1E424B8400ADEC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		513FD8DC1E424B8400ADEC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513FD8E11E424B8400ADEC31 /* PubNubWatchExtension Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PubNubWatchExtension Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		513FD8E61E424B8400ADEC31 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		513FD8E81E424B8400ADEC31 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		513FD8EA1E424B8400ADEC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		513FD8EC1E424B8400ADEC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513FD8F81E4250FE00ADEC31 /* PubNubWatchExtension Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PubNubWatchExtension Extension.entitlements"; sourceTree = "<group>"; };
 		51C0AAA41D9F2BAE00CE34D8 /* ExtensionApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExtensionApp.entitlements; sourceTree = "<group>"; };
 		51E075C41D99C4EF0078218C /* ExtensionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtensionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E075C71D99C4EF0078218C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,13 +139,23 @@
 		51E076011D99C5290078218C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		51E076031D99C5290078218C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51E0760B1D99CE960078218C /* PubNubShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PubNubShareExtension.entitlements; sourceTree = "<group>"; };
-		57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.debug.xcconfig"; sourceTree = "<group>"; };
-		6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.release.xcconfig"; sourceTree = "<group>"; };
-		867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5F883AF17F90F7AA267D24A3 /* Pods-PubNubShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubShareExtension.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		69A16945775916250325C4BE /* Pods-ExtensionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.release.xcconfig"; sourceTree = "<group>"; };
+		8FD656626508DCD2D3ABF02C /* Pods-PubNubWatchExtension Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PubNubWatchExtension Extension.release.xcconfig"; path = "../Pods/Target Support Files/Pods-PubNubWatchExtension Extension/Pods-PubNubWatchExtension Extension.release.xcconfig"; sourceTree = "<group>"; };
+		9DA6A963E921C17FD02CD35C /* Pods_PubNubWatchExtension_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PubNubWatchExtension_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB86C95ACD4F9CF2D2FCC8DC /* Pods_PubNubShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PubNubShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26D42EAE315ED536E190DB4 /* Pods-ExtensionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExtensionApp.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		513FD8DE1E424B8400ADEC31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A479EB8A0697B5B674BD22ED /* Pods_PubNubWatchExtension_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51E075C11D99C4EF0078218C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,18 +186,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C15ED8EF3F27F5159D87E63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0B9E65B33C8DB89330732E70 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */,
-				6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */,
-				092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */,
-				867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */,
+				F26D42EAE315ED536E190DB4 /* Pods-ExtensionApp.debug.xcconfig */,
+				69A16945775916250325C4BE /* Pods-ExtensionApp.release.xcconfig */,
+				5F883AF17F90F7AA267D24A3 /* Pods-PubNubShareExtension.debug.xcconfig */,
+				23A607B1637B1A7AD6F72DDE /* Pods-PubNubShareExtension.release.xcconfig */,
+				2108871F43A0A4091740AB1E /* Pods-PubNubWatchExtension Extension.debug.xcconfig */,
+				8FD656626508DCD2D3ABF02C /* Pods-PubNubWatchExtension Extension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		513FD8D61E424B8400ADEC31 /* PubNubWatchExtension */ = {
+			isa = PBXGroup;
+			children = (
+				513FD8D71E424B8400ADEC31 /* Interface.storyboard */,
+				513FD8DA1E424B8400ADEC31 /* Assets.xcassets */,
+				513FD8DC1E424B8400ADEC31 /* Info.plist */,
+			);
+			path = PubNubWatchExtension;
+			sourceTree = "<group>";
+		};
+		513FD8E51E424B8400ADEC31 /* PubNubWatchExtension Extension */ = {
+			isa = PBXGroup;
+			children = (
+				513FD8F81E4250FE00ADEC31 /* PubNubWatchExtension Extension.entitlements */,
+				513FD8E61E424B8400ADEC31 /* InterfaceController.swift */,
+				513FD8E81E424B8400ADEC31 /* ExtensionDelegate.swift */,
+				513FD8EA1E424B8400ADEC31 /* Assets.xcassets */,
+				513FD8EC1E424B8400ADEC31 /* Info.plist */,
+			);
+			path = "PubNubWatchExtension Extension";
 			sourceTree = "<group>";
 		};
 		51E075BB1D99C4EF0078218C = {
@@ -141,6 +238,8 @@
 				51E075DE1D99C4EF0078218C /* ExtensionAppTests */,
 				51E075E91D99C4EF0078218C /* ExtensionAppUITests */,
 				51E075FD1D99C5290078218C /* PubNubShareExtension */,
+				513FD8D61E424B8400ADEC31 /* PubNubWatchExtension */,
+				513FD8E51E424B8400ADEC31 /* PubNubWatchExtension Extension */,
 				51E075C51D99C4EF0078218C /* Products */,
 				0B9E65B33C8DB89330732E70 /* Pods */,
 				79C4D5F265156A44A99FB011 /* Frameworks */,
@@ -154,6 +253,8 @@
 				51E075DB1D99C4EF0078218C /* ExtensionAppTests.xctest */,
 				51E075E61D99C4EF0078218C /* ExtensionAppUITests.xctest */,
 				51E075FC1D99C5290078218C /* PubNubShareExtension.appex */,
+				513FD8D51E424B8400ADEC31 /* PubNubWatchExtension.app */,
+				513FD8E11E424B8400ADEC31 /* PubNubWatchExtension Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +308,8 @@
 			children = (
 				06EDAAE7E259905CA29802DD /* Pods_ExtensionApp.framework */,
 				EB86C95ACD4F9CF2D2FCC8DC /* Pods_PubNubShareExtension.framework */,
+				35E069F91FF1D531309C8D5D /* Pods_PubNubWatchExtension.framework */,
+				9DA6A963E921C17FD02CD35C /* Pods_PubNubWatchExtension_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,6 +317,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		513FD8D41E424B8400ADEC31 /* PubNubWatchExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 513FD8F61E424B8400ADEC31 /* Build configuration list for PBXNativeTarget "PubNubWatchExtension" */;
+			buildPhases = (
+				513FD8D31E424B8400ADEC31 /* Resources */,
+				513FD8F51E424B8400ADEC31 /* Embed App Extensions */,
+				C15ED8EF3F27F5159D87E63F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				513FD8E41E424B8400ADEC31 /* PBXTargetDependency */,
+			);
+			name = PubNubWatchExtension;
+			productName = PubNubWatchExtension;
+			productReference = 513FD8D51E424B8400ADEC31 /* PubNubWatchExtension.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		513FD8E01E424B8400ADEC31 /* PubNubWatchExtension Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 513FD8F41E424B8400ADEC31 /* Build configuration list for PBXNativeTarget "PubNubWatchExtension Extension" */;
+			buildPhases = (
+				8B8832008DEB2A9DBEE627FB /* [CP] Check Pods Manifest.lock */,
+				513FD8DD1E424B8400ADEC31 /* Sources */,
+				513FD8DE1E424B8400ADEC31 /* Frameworks */,
+				513FD8DF1E424B8400ADEC31 /* Resources */,
+				886E87A37C28CD9ACF82A07F /* [CP] Embed Pods Frameworks */,
+				3ACC49965AC1807F9953C09F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PubNubWatchExtension Extension";
+			productName = "PubNubWatchExtension Extension";
+			productReference = 513FD8E11E424B8400ADEC31 /* PubNubWatchExtension Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		51E075C31D99C4EF0078218C /* ExtensionApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51E075EF1D99C4EF0078218C /* Build configuration list for PBXNativeTarget "ExtensionApp" */;
@@ -225,11 +366,13 @@
 				51E0760A1D99C5290078218C /* Embed App Extensions */,
 				7E4BE9032D6ED785B2970DBC /* [CP] Embed Pods Frameworks */,
 				D7DCFC242080DF9A5B0A40D2 /* [CP] Copy Pods Resources */,
+				513FD8F71E424B8400ADEC31 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				51E076051D99C5290078218C /* PBXTargetDependency */,
+				513FD8EE1E424B8400ADEC31 /* PBXTargetDependency */,
 			);
 			name = ExtensionApp;
 			productName = ExtensionApp;
@@ -280,7 +423,6 @@
 				51E075F81D99C5290078218C /* Sources */,
 				51E075F91D99C5290078218C /* Frameworks */,
 				51E075FA1D99C5290078218C /* Resources */,
-				FB227B0CAA58DC4BEE249070 /* [CP] Embed Pods Frameworks */,
 				3999D277232ACD7F76D0A303 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -298,10 +440,27 @@
 		51E075BC1D99C4EF0078218C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Jordan Zucker";
 				TargetAttributes = {
+					513FD8D41E424B8400ADEC31 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					513FD8E01E424B8400ADEC31 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8XP4D6N55Z;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 0;
+							};
+						};
+					};
 					51E075C31D99C4EF0078218C = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
@@ -349,11 +508,30 @@
 				51E075DA1D99C4EF0078218C /* ExtensionAppTests */,
 				51E075E51D99C4EF0078218C /* ExtensionAppUITests */,
 				51E075FB1D99C5290078218C /* PubNubShareExtension */,
+				513FD8D41E424B8400ADEC31 /* PubNubWatchExtension */,
+				513FD8E01E424B8400ADEC31 /* PubNubWatchExtension Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		513FD8D31E424B8400ADEC31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513FD8DB1E424B8400ADEC31 /* Assets.xcassets in Resources */,
+				513FD8D91E424B8400ADEC31 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		513FD8DF1E424B8400ADEC31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513FD8EB1E424B8400ADEC31 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51E075C21D99C4EF0078218C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,7 +579,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3999D277232ACD7F76D0A303 /* [CP] Copy Pods Resources */ = {
@@ -419,6 +597,21 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3ACC49965AC1807F9953C09F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PubNubWatchExtension Extension/Pods-PubNubWatchExtension Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7E4BE9032D6ED785B2970DBC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +627,36 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		886E87A37C28CD9ACF82A07F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PubNubWatchExtension Extension/Pods-PubNubWatchExtension Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B8832008DEB2A9DBEE627FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C4552E65A2B0B78306DC0537 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,7 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D7DCFC242080DF9A5B0A40D2 /* [CP] Copy Pods Resources */ = {
@@ -464,24 +687,18 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ExtensionApp/Pods-ExtensionApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB227B0CAA58DC4BEE249070 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-PubNubShareExtension/Pods-PubNubShareExtension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		513FD8DD1E424B8400ADEC31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513FD8E91E424B8400ADEC31 /* ExtensionDelegate.swift in Sources */,
+				513FD8E71E424B8400ADEC31 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51E075C01D99C4EF0078218C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,6 +736,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		513FD8E41E424B8400ADEC31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 513FD8E01E424B8400ADEC31 /* PubNubWatchExtension Extension */;
+			targetProxy = 513FD8E31E424B8400ADEC31 /* PBXContainerItemProxy */;
+		};
+		513FD8EE1E424B8400ADEC31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 513FD8D41E424B8400ADEC31 /* PubNubWatchExtension */;
+			targetProxy = 513FD8ED1E424B8400ADEC31 /* PBXContainerItemProxy */;
+		};
 		51E075DD1D99C4EF0078218C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51E075C31D99C4EF0078218C /* ExtensionApp */;
@@ -537,6 +764,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		513FD8D71E424B8400ADEC31 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				513FD8D81E424B8400ADEC31 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		51E075CB1D99C4EF0078218C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -564,6 +799,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		513FD8F01E424B8400ADEC31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = "";
+				IBSC_MODULE = PubNubWatchExtension_Extension;
+				INFOPLIST_FILE = PubNubWatchExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		513FD8F11E424B8400ADEC31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = "";
+				IBSC_MODULE = PubNubWatchExtension_Extension;
+				INFOPLIST_FILE = PubNubWatchExtension/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		513FD8F21E424B8400ADEC31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2108871F43A0A4091740AB1E /* Pods-PubNubWatchExtension Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "PubNubWatchExtension Extension/PubNubWatchExtension Extension.entitlements";
+				DEVELOPMENT_TEAM = 8XP4D6N55Z;
+				INFOPLIST_FILE = "PubNubWatchExtension Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		513FD8F31E424B8400ADEC31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FD656626508DCD2D3ABF02C /* Pods-PubNubWatchExtension Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "PubNubWatchExtension Extension/PubNubWatchExtension Extension.entitlements";
+				DEVELOPMENT_TEAM = 8XP4D6N55Z;
+				INFOPLIST_FILE = "PubNubWatchExtension Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 		51E075ED1D99C4EF0078218C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -659,7 +972,7 @@
 		};
 		51E075F01D99C4EF0078218C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57B64912482C48F1219D9330 /* Pods-ExtensionApp.debug.xcconfig */;
+			baseConfigurationReference = F26D42EAE315ED536E190DB4 /* Pods-ExtensionApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -675,7 +988,7 @@
 		};
 		51E075F11D99C4EF0078218C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ECBE9ABB7BBC04E5964F95E /* Pods-ExtensionApp.release.xcconfig */;
+			baseConfigurationReference = 69A16945775916250325C4BE /* Pods-ExtensionApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -749,12 +1062,17 @@
 		};
 		51E076081D99C5290078218C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 092178506ED0D397B9897926 /* Pods-PubNubShareExtension.debug.xcconfig */;
+			baseConfigurationReference = 5F883AF17F90F7AA267D24A3 /* Pods-PubNubShareExtension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = PubNubShareExtension/PubNubShareExtension.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PubNubShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PubNub\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.PubNubShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -764,12 +1082,17 @@
 		};
 		51E076091D99C5290078218C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 867646502FF5AAE16EA08F47 /* Pods-PubNubShareExtension.release.xcconfig */;
+			baseConfigurationReference = 23A607B1637B1A7AD6F72DDE /* Pods-PubNubShareExtension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = PubNubShareExtension/PubNubShareExtension.entitlements;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PubNubShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"PubNub\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Stanera.ExtensionApp.PubNubShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -780,6 +1103,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		513FD8F41E424B8400ADEC31 /* Build configuration list for PBXNativeTarget "PubNubWatchExtension Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513FD8F21E424B8400ADEC31 /* Debug */,
+				513FD8F31E424B8400ADEC31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		513FD8F61E424B8400ADEC31 /* Build configuration list for PBXNativeTarget "PubNubWatchExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				513FD8F01E424B8400ADEC31 /* Debug */,
+				513FD8F11E424B8400ADEC31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51E075BF1D99C4EF0078218C /* Build configuration list for PBXProject "ExtensionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
