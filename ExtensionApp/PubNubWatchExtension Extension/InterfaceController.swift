@@ -47,7 +47,9 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func publishButtonPressed(sender: WKInterfaceButton) {
-        client.publish("Hello, [watch]world!", toChannel: publishChannel) { (status) in
+        var message = [String:Any]()
+        message["message"] = "Hello, [watch]world!"
+        client.publish(message, toChannel: publishChannel) { (status) in
             if !status.isError {
                 print("success!")
             }
