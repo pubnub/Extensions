@@ -19,9 +19,11 @@
                                 <action selector="publishButtonPressedWithSender:" destination="AgC-eL-Hgc" id="M9P-MS-xpq"/>
                             </connections>
                         </button>
+                        <label width="136" alignment="left" text="Label" id="qhY-o2-E7r"/>
                     </items>
                     <connections>
                         <outlet property="publishButton" destination="zxk-TN-2Dg" id="pyV-Dc-SXF"/>
+                        <outlet property="publishStatusLabel" destination="qhY-o2-E7r" id="iBn-xf-edN"/>
                     </connections>
                 </controller>
             </objects>

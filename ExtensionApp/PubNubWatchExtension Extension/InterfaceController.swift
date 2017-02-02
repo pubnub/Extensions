@@ -24,13 +24,15 @@ class InterfaceController: WKInterfaceController {
         return PubNub.clientWithConfiguration(configuration)
     }()
     
-    @IBOutlet var publishButton: WKInterfaceButton!
+    @IBOutlet weak var publishButton: WKInterfaceButton!
+    @IBOutlet weak var publishStatusLabel: WKInterfaceLabel!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
         publishButton.setTitle("Publish")
+        publishStatusLabel.setText("Publish via PubNub")
         
     }
     
@@ -50,9 +52,12 @@ class InterfaceController: WKInterfaceController {
         var message = [String:Any]()
         message["message"] = "Hello, [watch]world!"
         client.publish(message, toChannel: publishChannel) { (status) in
-            if !status.isError {
-                print("success!")
+            var publishStatusText = "Publish succeeded!"
+            if status.isError {
+                print("Publish failed")
+                publishStatusText = "Publish failed!"
             }
+            self.publishStatusLabel.setText(publishStatusText)
         }
     }
 

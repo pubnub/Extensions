@@ -109,6 +109,8 @@ class ViewController: UIViewController, PNObjectEventListener {
                     
                     self.imageHolderView.image = UIImage(data: imageData)
                 }
+            } else {
+                self.imageHolderView.image = nil
             }
         }
     }
