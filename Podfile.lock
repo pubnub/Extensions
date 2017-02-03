@@ -1,14 +1,14 @@
 PODS:
-  - PubNub (4.5.12):
-    - PubNub/Core (= 4.5.12)
-  - PubNub/Core (4.5.12)
+  - PubNub (4.5.13):
+    - PubNub/Core (= 4.5.13)
+  - PubNub/Core (4.5.13)
 
 DEPENDENCIES:
   - PubNub
 
 SPEC CHECKSUMS:
-  PubNub: d092e632ea13373c56cf877f06ec17853fca324a
+  PubNub: 53711c37f9bcd8f927f154ca91774910a6b552ed
 
 PODFILE CHECKSUM: 6d9e3055e6a5c81696ecbebbc38057f72155eb20
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.0

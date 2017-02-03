@@ -14,6 +14,9 @@
 		513FD8E91E424B8400ADEC31 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8E81E424B8400ADEC31 /* ExtensionDelegate.swift */; };
 		513FD8EB1E424B8400ADEC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513FD8EA1E424B8400ADEC31 /* Assets.xcassets */; };
 		513FD8EF1E424B8400ADEC31 /* PubNubWatchExtension.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 513FD8D51E424B8400ADEC31 /* PubNubWatchExtension.app */; };
+		51B0E68D1E45374C00E6AA76 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E68C1E45374C00E6AA76 /* ImageHandler.swift */; };
+		51B0E68E1E45389500E6AA76 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0E68C1E45374C00E6AA76 /* ImageHandler.swift */; };
+		51B0E6901E453DA900E6AA76 /* apple-watch-pubnub.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B0E68F1E453DA900E6AA76 /* apple-watch-pubnub.png */; };
 		51E075C81D99C4EF0078218C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E075C71D99C4EF0078218C /* AppDelegate.swift */; };
 		51E075CA1D99C4EF0078218C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E075C91D99C4EF0078218C /* ViewController.swift */; };
 		51E075CD1D99C4EF0078218C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51E075CB1D99C4EF0078218C /* Main.storyboard */; };
@@ -119,6 +122,8 @@
 		513FD8EA1E424B8400ADEC31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513FD8EC1E424B8400ADEC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513FD8F81E4250FE00ADEC31 /* PubNubWatchExtension Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PubNubWatchExtension Extension.entitlements"; sourceTree = "<group>"; };
+		51B0E68C1E45374C00E6AA76 /* ImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHandler.swift; path = ../PubNubShareExtension/ImageHandler.swift; sourceTree = "<group>"; };
+		51B0E68F1E453DA900E6AA76 /* apple-watch-pubnub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-watch-pubnub.png"; sourceTree = "<group>"; };
 		51C0AAA41D9F2BAE00CE34D8 /* ExtensionApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExtensionApp.entitlements; sourceTree = "<group>"; };
 		51E075C41D99C4EF0078218C /* ExtensionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtensionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E075C71D99C4EF0078218C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,21 +230,48 @@
 				513FD8F81E4250FE00ADEC31 /* PubNubWatchExtension Extension.entitlements */,
 				513FD8E61E424B8400ADEC31 /* InterfaceController.swift */,
 				513FD8E81E424B8400ADEC31 /* ExtensionDelegate.swift */,
+				51B0E68F1E453DA900E6AA76 /* apple-watch-pubnub.png */,
 				513FD8EA1E424B8400ADEC31 /* Assets.xcassets */,
 				513FD8EC1E424B8400ADEC31 /* Info.plist */,
 			);
 			path = "PubNubWatchExtension Extension";
 			sourceTree = "<group>";
 		};
+		51B0E6911E45456300E6AA76 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				51B0E68C1E45374C00E6AA76 /* ImageHandler.swift */,
+			);
+			name = Shared;
+			path = ExtensionApp;
+			sourceTree = "<group>";
+		};
+		51B0E6921E45457000E6AA76 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				51E075DE1D99C4EF0078218C /* ExtensionAppTests */,
+				51E075E91D99C4EF0078218C /* ExtensionAppUITests */,
+			);
+			name = Testing;
+			sourceTree = "<group>";
+		};
+		51B0E6931E45458700E6AA76 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				513FD8D61E424B8400ADEC31 /* PubNubWatchExtension */,
+				513FD8E51E424B8400ADEC31 /* PubNubWatchExtension Extension */,
+			);
+			name = Watch;
+			sourceTree = "<group>";
+		};
 		51E075BB1D99C4EF0078218C = {
 			isa = PBXGroup;
 			children = (
 				51E075C61D99C4EF0078218C /* ExtensionApp */,
-				51E075DE1D99C4EF0078218C /* ExtensionAppTests */,
-				51E075E91D99C4EF0078218C /* ExtensionAppUITests */,
+				51B0E6911E45456300E6AA76 /* Shared */,
 				51E075FD1D99C5290078218C /* PubNubShareExtension */,
-				513FD8D61E424B8400ADEC31 /* PubNubWatchExtension */,
-				513FD8E51E424B8400ADEC31 /* PubNubWatchExtension Extension */,
+				51B0E6931E45458700E6AA76 /* Watch */,
+				51B0E6921E45457000E6AA76 /* Testing */,
 				51E075C51D99C4EF0078218C /* Products */,
 				0B9E65B33C8DB89330732E70 /* Pods */,
 				79C4D5F265156A44A99FB011 /* Frameworks */,
@@ -528,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51B0E6901E453DA900E6AA76 /* apple-watch-pubnub.png in Resources */,
 				513FD8EB1E424B8400ADEC31 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +728,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				513FD8E91E424B8400ADEC31 /* ExtensionDelegate.swift in Sources */,
+				51B0E68E1E45389500E6AA76 /* ImageHandler.swift in Sources */,
 				513FD8E71E424B8400ADEC31 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,6 +763,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51B0E68D1E45374C00E6AA76 /* ImageHandler.swift in Sources */,
 				51E075FF1D99C5290078218C /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

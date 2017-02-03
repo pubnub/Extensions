@@ -19,7 +19,7 @@ class ShareViewController: SLComposeServiceViewController {
         
         // Create PubNub client
         let configuration = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
-//        configuration.applicationExtensionSharedGroupIdentifier = true
+        configuration.stripMobilePayload = false
         configuration.applicationExtensionSharedGroupIdentifier = "group.PubNub.sharedContainer"
         
         return PubNub.clientWithConfiguration(configuration)
@@ -102,11 +102,8 @@ class ShareViewController: SLComposeServiceViewController {
                 do {
                     
                     let imageData = try Data(contentsOf: safeImageURL)
-                    let loadedImage = self.resizedImage(UIImage(data: imageData)!, targetWidth: 200);
-                    
-                    let compressedImage = UIImageJPEGRepresentation(loadedImage, 0.45)
-                    if let encodedImage = compressedImage?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: UInt(0))) {
-                        
+                    let loadedImage = ImageHandler.resizedImage(UIImage(data: imageData)!, targetWidth: 200);
+                    if let encodedImage = ImageHandler.base64String(for: loadedImage) {
                         completion(encodedImage)
                     }
                 }
@@ -116,15 +113,4 @@ class ShareViewController: SLComposeServiceViewController {
         })
     }
     
-    func resizedImage(_ image: UIImage, targetWidth: CGFloat) -> UIImage {
-        
-        let scale = targetWidth / image.size.width
-        let targetHeight = image.size.height * scale
-        UIGraphicsBeginImageContext(CGSize(width: targetWidth, height: targetHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: targetWidth, height: targetHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
-    }
 }

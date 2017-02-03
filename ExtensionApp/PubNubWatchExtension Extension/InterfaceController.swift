@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController {
         
         // Create PubNub client
         let configuration = PNConfiguration(publishKey: "demo-36", subscribeKey: "demo-36")
+        configuration.stripMobilePayload = false
         configuration.applicationExtensionSharedGroupIdentifier = "group.PubNub.sharedContainer"
         
         return PubNub.clientWithConfiguration(configuration)
@@ -39,6 +40,7 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        publishButton.setEnabled(true)
     }
     
     override func didDeactivate() {
@@ -49,9 +51,21 @@ class InterfaceController: WKInterfaceController {
     // MARK: - Actions
     
     @IBAction func publishButtonPressed(sender: WKInterfaceButton) {
+        publishButton.setEnabled(false)
         var message = [String:Any]()
         message["message"] = "Hello, [watch]world!"
+        
+        if let capturedScreenshot = UIImage(named: "apple-watch-pubnub.png") {
+            let compressedImage = ImageHandler.resizedImage(capturedScreenshot, targetWidth: 200.0)
+            if let finalString = ImageHandler.base64String(for: compressedImage) {
+                message["image"] = finalString
+            }
+        }
+        
+        print("try to publish: \(message)")
+        
         client.publish(message, toChannel: publishChannel) { (status) in
+            self.publishButton.setEnabled(true)
             var publishStatusText = "Publish succeeded!"
             if status.isError {
                 print("Publish failed")
